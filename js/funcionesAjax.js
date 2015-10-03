@@ -1,6 +1,7 @@
-function MostarLogin()
+function MostrarLogin()
 {
-		//alert(queMostrar);
+		
+		
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -18,4 +19,5 @@ function MostarLogin()
 		//alert("siempre "+retorno.statusText);
 
 	});
+
 }

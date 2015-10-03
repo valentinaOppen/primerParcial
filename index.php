@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -18,9 +19,11 @@
  <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
  <link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+
+
+<script type="text/javascript" src="js/funcionesABM.js"></script>
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
 <script type="text/javascript" src="js/funcionesLogin.js"></script>
-<script type="text/javascript" src="js/funcionesABM.js"></script>
 
 </head>
 
@@ -37,13 +40,13 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a onclick="MostrarLogin()" class="btn"  id="btnLogin">Ingreso</a></li>
+				<li><a onclick="MostrarLogin()"  class="btn"  id="btnLogin">Ingreso</a></li>					
 				<li><a onclick="" class="btn">Ir a VOTACIÓN</a> </li>
-				<li><a onclick="" class="btn">Listado de Votaciones</a> </li>
-				
+				<li><a onclick="" class="btn">Listado de Votaciones</a> </li>				
 			</ul>
 			<!-- /#main-nav --> 
 		</nav>
+
 
 		<form id="searchform">
 			
@@ -106,6 +109,7 @@
 	
 </div>
 <!-- /#pagewrap -->
+
 
 </body>
 </html>
