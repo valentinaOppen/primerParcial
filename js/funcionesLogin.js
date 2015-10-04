@@ -16,14 +16,16 @@ function validarLogin()
 	
 	funcionAjax.done(function(retorno)
 	{
-	
+
 		if(retorno=="ingreso")
 		{
 			MostrarFormVotacion();
 		}
 		else
 		{
-			alert("Dni incorrecto");	
+			alert("retorno");
+			alert(retorno);
+				
 		}
 	});
 		

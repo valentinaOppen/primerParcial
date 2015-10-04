@@ -31,7 +31,7 @@ if(!isset($_SESSION['registrado']))
 }
 else
 {    
-    echo"<h3>usted '".$_SESSION['registrado']."' esta logeado. </h3>";?>
+    echo"<h3>El dni ingresado es:  '".$_SESSION['registrado']."'</h3>";?>
 
     <button onclick="desloguear()" class="btn btn-lg btn-danger btn-block" type="button">Desloguearme</button>
    

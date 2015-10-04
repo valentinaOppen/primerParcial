@@ -11,13 +11,7 @@ function MostrarLogin()
 		$("#principal").html(retorno);
 		$("#informe").html("Correcto Form login!!!");	
 	});
-	funcionAjax.fail(function(retorno){
-		$("#botonesABM").html(":(");
-		$("#informe").html(retorno.responseText);	
-	});
-	funcionAjax.always(function(retorno){
-		//alert("siempre "+retorno.statusText);
-
-	});
+	
+	
 
 }
