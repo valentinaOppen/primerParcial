@@ -15,18 +15,9 @@ function validarLogin()
 
 	
 	funcionAjax.done(function(retorno)
-	{
-
-		if(retorno=="ingreso")
-		{
-			MostrarFormVotacion();
-		}
-		else
-		{
-			alert("retorno");
-			alert(retorno);
-				
-		}
+	{		
+		MostrarVotacion();	
+		
 	});
 		
 }
@@ -42,9 +33,10 @@ function desloguear()
 	});
 	funcionAjax.done(function(retorno){
 			
-			MostrarLogin();
-			
+			MostrarLogin();			
 			
 	});	
 }
+
+
 
