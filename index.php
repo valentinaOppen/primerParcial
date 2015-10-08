@@ -24,6 +24,16 @@
 <script type="text/javascript" src="js/funcionesABM.js"></script>
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
 <script type="text/javascript" src="js/funcionesLogin.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+<script type="text/javascript" src="js/geolocalizacionCommon.js"></script>
+<script type="text/javascript" src="js/moduloGeolocalizacion.js"></script>
+<script type="text/javascript" src="js/funcionesMapa.js"></script>
+
+
+
+<script type="text/javascript">
+$("#content").css('width', '600px');
+</script>
 
 </head>
 

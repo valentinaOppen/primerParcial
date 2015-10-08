@@ -1,3 +1,6 @@
+<script type="text/javascript">
+$("#content").css('width', '600px');
+</script>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/ingreso.css" rel="stylesheet">
@@ -17,7 +20,7 @@ if(!isset($_SESSION['registrado']))
 
         <label for="dni" class="sr-only">Dni</label>
            <input type="text" id="dni" class="form-control" placeholder="DNI" required="" autofocus="" value="">
-        <br>
+        <br>        
         
         <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
       

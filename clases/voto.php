@@ -6,6 +6,8 @@ class voto
  	public $provincia;
   	public $sexo;
   	public $presidente;
+  	public $localidad;
+  	public $domicilio;
 
   	public function BorrarVoto()
 	 {
@@ -41,7 +43,9 @@ class voto
 				set dni='$this->dni',
 				provincia='$this->provincia',
 				presidente='$this->presidente'
-				sexo='$this->sexo'
+				sexo='$this->sexo',
+				localidad='$this->localidad',
+				domicilio='$this->domicilio'
 				WHERE id='$this->id'");
 			return $consulta->execute();
 
@@ -50,13 +54,14 @@ class voto
   
 	 public function InsertarElVoto()
 	 {
+	 	
 				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni, provincia, sexo, presidente)values('$this->dni','$this->provincia','$this->sexo','$this->presidente')");
+				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni, provincia, sexo, presidente, localidad, domicilio)values('$this->dni','$this->provincia','$this->sexo','$this->presidente', '$this->localidad', '$this->domicilio')");
 				$consulta->execute();
-				return $objetoAccesoDato->RetornarUltimoIdInsertado();
-				
-
+				return $objetoAccesoDato->RetornarUltimoIdInsertado();				
 	 }
+
+
 
 	 /*
 
@@ -86,20 +91,22 @@ class voto
 				$consulta->execute();		
 				return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	 }
+*/
 
-
-	 public function GuardarCD()
+	 public function GuardarVoto()
 	 {
 
 	 	if($this->id>0)
 	 		{
-	 			$this->ModificarCdParametros();
-	 		}else {
-	 			$this->InsertarElCdParametros();
+	 			$this->ModificarVoto();
+	 		}
+	 		else 
+	 		{
+	 			$this->InsertarElVoto();
 	 		}
 
 	 }
-*/
+
 
   	public static function TraerTodoLosVotos()
 	{

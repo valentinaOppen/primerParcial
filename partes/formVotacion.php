@@ -1,3 +1,7 @@
+<script type="text/javascript">
+$("#content").css('width', '600px');
+</script>
+
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/ingreso.css" rel="stylesheet">
 
@@ -26,6 +30,14 @@ if(isset($_SESSION['registrado']))
     		</select>		
     		<br>
 
+        <label for="dni" class="sr-only">Localidad</label>
+           <input type="text" id="localidad" class="form-control" placeholder="localidad"></input>
+        <br>
+
+        <label for="dni" class="sr-only">Domicilio</label>
+           <input type="text" id="domicilio" class="form-control" placeholder="domicilio"></input>
+        <br>
+
 
         <label class="radio-inline">
           <input type="radio" name="inlineRadioOptions" id="sexo" value="masculino">Masculino
@@ -35,7 +47,7 @@ if(isset($_SESSION['registrado']))
     		  <input type="radio" name="inlineRadioOptions" id="sexo" value="femenino">Femenino
     		</label>
 
-    		
+    		<input type="hidden" id="dni" value="<?php echo $_SESSION['registrado'] ?>"></input>
 
     		<br>
     		<br>

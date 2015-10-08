@@ -22,7 +22,9 @@ switch ($queHago)
 		$voto->presidente = $_POST['presidente'];
 		$voto->sexo = $_POST['sexo'];	
 		$voto->dni = $_POST['dni'];
-		$voto->InsertarElVoto();
+		$voto->localidad = $_POST['localidad'];
+		$voto->domicilio = $_POST['domicilio'];
+		$voto->GuardarVoto();
 		break;
 
 	case 'MostrarGrillaVotaciones':
@@ -39,8 +41,14 @@ switch ($queHago)
 		$voto = new voto();	
 		$voto::BorrarVotoPorId($_POST['id']);
 		echo"borrado";
+		break;
 
+	case 'VerEnMapa':
+		include("partes/formMapa.php");
+		break;
 
+	case 'guardarMarcadores':
+		include("partes/descarga.php");
 		break;
 
 

@@ -5,6 +5,7 @@ function validarLogin()
 
 	var funcionAjax=$.ajax
 	({
+		cache:false,
 		url:"php/validarUsuario.php",
 		type:"post",
 		data:
@@ -16,7 +17,17 @@ function validarLogin()
 	
 	funcionAjax.done(function(retorno)
 	{		
-		MostrarVotacion();	
+		retorno = retorno.trim();
+		if(retorno=="ingreso")
+		{
+			MostrarVotacion();
+		}
+		else
+		{
+			alert("Dni ingresado incorrecto");
+			MostrarLogin();
+		}
+		
 		
 	});
 		

@@ -19,8 +19,6 @@ function BorrarVoto(idParametro)
 	
 }
 
-
-
 function EditarVoto(idParametro)
 {
 	
@@ -50,31 +48,35 @@ function EditarVoto(idParametro)
 
 function GuardarVoto()
 {
-			
-		var provincia=$("#provincia").val();
-		var presidente=$("#presidente").val();
-		var sexo=$("#sexo").val();
-		var dni = $("#dni").val();		
 
-		var funcionAjax=$.ajax
-		({
-			url:"nexo.php",
-			type:"post",
-			data:
-			{
-				queHacer:"GuardarVoto",				
-				provincia:provincia,
-				presidente:presidente,
-				sexo:sexo,
-				dni:dni
-			}
+	var provincia=$("#provincia").val();
+	var presidente=$("#presidente").val();
+	var sexo=$("#sexo").val();
+	var dni = $("#dni").val();		
+	var localidad=$("#localidad").val();
+	var domicilio=$("#domicilio").val();
 
-		});
-
-		funcionAjax.done(function(retorno)
+	var funcionAjax=$.ajax
+	({
+		url:"nexo.php",
+		type:"post",
+		data:
 		{
-				MostrarGrillaVotaciones();
-			
-		});
+			queHacer:"GuardarVoto",				
+			provincia:provincia,
+			presidente:presidente,
+			sexo:sexo,
+			dni:dni,
+			localidad:localidad,
+			domicilio:domicilio
+		}
+
+	});
+
+	funcionAjax.done(function(retorno)
+	{
+		MostrarGrillaVotaciones();
+		
+	});
 		
 }
