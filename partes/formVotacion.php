@@ -15,7 +15,7 @@ if(isset($_SESSION['registrado']))
         <h4 class="form-ingreso-heading">Ingrese su Voto</h4>
 
         <label for="dni" class="sr-only">Provincia</label>
-           <input type="text" id="dni" class="form-control" placeholder="provincia"></input>
+           <input type="text" id="provincia" class="form-control" placeholder="provincia"></input>
         <br>
 
         <label for="dni" class="sr-only">Presidente</label>
@@ -26,13 +26,16 @@ if(isset($_SESSION['registrado']))
     		</select>		
     		<br>
 
+
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" id="sexo" value="masculino">Masculino
+        </label>
+        
     		<label class="radio-inline">
     		  <input type="radio" name="inlineRadioOptions" id="sexo" value="femenino">Femenino
     		</label>
 
-    		<label class="radio-inline">
-    		  <input type="radio" name="inlineRadioOptions" id="sexo" value="masculino">Masculino
-    		</label>
+    		
 
     		<br>
     		<br>

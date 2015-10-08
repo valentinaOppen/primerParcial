@@ -1,4 +1,5 @@
 <?php 
+
 require_once("clases/AccesoDatos.php");
 require_once("clases/voto.php");
 
@@ -15,15 +16,29 @@ switch ($queHago)
 		break;
 
 	case 'GuardarVoto':
-		
-		var_dump($_POST);
-		$voto = new voto();
-		$voto->dni = $_SESSION['registado'];
+			
+		$voto = new voto();		
 		$voto->provincia = $_POST['provincia'];
 		$voto->presidente = $_POST['presidente'];
 		$voto->sexo = $_POST['sexo'];	
+		$voto->dni = $_POST['dni'];
 		$voto->InsertarElVoto();
+		break;
 
+	case 'MostrarGrillaVotaciones':
+
+		include("partes/grillaVotaciones.php");
+		break;
+
+	case 'TraerUnVoto':		
+		$voto = voto::TraerUnVoto($_POST['id']);		
+		echo json_encode($voto);		
+		break; 
+
+	case 'BorrarVoto':	
+		$voto = new voto();	
+		$voto::BorrarVotoPorId($_POST['id']);
+		echo"borrado";
 
 
 		break;

@@ -1,57 +1,60 @@
-/*
-function BorrarCD(idParametro)
+
+function BorrarVoto(idParametro)
 {
 	//alert(idParametro);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"BorrarCD",
+			queHacer:"BorrarVoto",
 			id:idParametro	
 		}
 	});
-	funcionAjax.done(function(retorno){
-		Mostrar("MostrarGrilla");
-		$("#informe").html("cantidad de eliminados "+ retorno);	
+	funcionAjax.done(function(retorno)
+	{
+		
+		MostrarGrillaVotaciones();
 		
 	});
-	funcionAjax.fail(function(retorno){	
-		$("#informe").html(retorno.responseText);	
-	});	
+	
 }
 
-function EditarCD(idParametro)
+
+
+function EditarVoto(idParametro)
 {
+	
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"TraerCD",
-			id:idParametro	
+			queHacer:"TraerUnVoto",
+			id:idParametro
 		}
 	});
-	funcionAjax.done(function(retorno){
-		var cd =JSON.parse(retorno);	
-		$("#idCD").val(cd.id);
-		$("#cantante").val(cd.cantante);
-		$("#titulo").val(cd.titulo);
-		$("#anio").val(cd.año);
+	
+	funcionAjax.done(function(retorno)
+	{
+
+		var voto =JSON.parse(retorno);
+		$("#dni").val(voto.dni);
+		$("#provincia").val(voto.provincia);
+		$("#sexo").val(voto.sexo);
+		$("#presidente").val(voto.presidente);	
 	});
-	funcionAjax.fail(function(retorno){	
-		$("#informe").html(retorno.responseText);	
-	});	
-	Mostrar("MostrarFormAlta");
+	
+	
+	MostrarVotacion();
 }
-*/
+
 
 function GuardarVoto()
 {
 			
-		alert("voto");
 		var provincia=$("#provincia").val();
 		var presidente=$("#presidente").val();
 		var sexo=$("#sexo").val();
-
+		var dni = $("#dni").val();		
 
 		var funcionAjax=$.ajax
 		({
@@ -59,18 +62,18 @@ function GuardarVoto()
 			type:"post",
 			data:
 			{
-				queHacer:"GuardarVoto",
-				dni:dni,
+				queHacer:"GuardarVoto",				
 				provincia:provincia,
 				presidente:presidente,
-				sexo:sexo
+				sexo:sexo,
+				dni:dni
 			}
 
 		});
 
 		funcionAjax.done(function(retorno)
 		{
-				/*MostrarListado();			*/
+				MostrarGrillaVotaciones();
 			
 		});
 		

@@ -42,7 +42,7 @@
 			<ul id="main-nav" class="clearfix">
 				<li><a onclick="MostrarLogin()" class="btn"  id="btnLogin">Ingreso</a></li>		
 				<li><a onclick="MostrarVotacion()" class="btn"  id="btnVotacion">Votacion</a></li>							
-				<li><a onclick="" class="btn">Listado de Votaciones</a> </li>				
+				<li><a onclick="MostrarGrillaVotaciones()" class="btn">Listado de Votaciones</a> </li>				
 			</ul>
 			<!-- /#main-nav --> 
 		</nav>

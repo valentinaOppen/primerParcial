@@ -16,20 +16,20 @@ class voto
 				WHERE id=:id");	
 				$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);		
 				$consulta->execute();
-				return $consulta->rowCount();
+				/*return $consulta->rowCount();*/
 	 }
 
-	public static function BorrarVotoPorDni($dni)
+	public static function BorrarVotoPorId($id)
 	 {
 
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("
 				delete 
 				from votos 				
-				WHERE dni=:dni");	
-				$consulta->bindValue(':dni',$dni, PDO::PARAM_INT);		
+				WHERE id=:id");	
+				$consulta->bindValue(':id',$id, PDO::PARAM_INT);		
 				$consulta->execute();
-				return $consulta->rowCount();
+				/*return $consulta->rowCount();*/
 
 	 }
 	public function ModificarVoto()
@@ -51,7 +51,7 @@ class voto
 	 public function InsertarElVoto()
 	 {
 				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni, provincia, sexo, presidente)values('$this->dni','$this->provinci','$this->sexo','$this->presidente')");
+				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni, provincia, sexo, presidente)values('$this->dni','$this->provincia','$this->sexo','$this->presidente')");
 				$consulta->execute();
 				return $objetoAccesoDato->RetornarUltimoIdInsertado();
 				
@@ -104,15 +104,16 @@ class voto
   	public static function TraerTodoLosVotos()
 	{
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("select dni,sexo, provincia, presidente from votos");
-			$consulta->execute();			
+			$consulta =$objetoAccesoDato->RetornarConsulta("select * from votos");
+			$consulta->execute();					
 			return $consulta->fetchAll(PDO::FETCH_CLASS, "voto");		
+
 	}
 
 	public static function TraerUnVoto($id) 
 	{
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("select dni,sexo, provincia, presidente from votos where id = $id");
+			$consulta =$objetoAccesoDato->RetornarConsulta("select * from votos where id = $id");
 			$consulta->execute();
 			$votoBuscado= $consulta->fetchObject('voto');
 			return $votoBuscado;				
