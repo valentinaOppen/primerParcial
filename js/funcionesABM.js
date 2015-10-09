@@ -21,7 +21,7 @@ function BorrarVoto(idParametro)
 
 function EditarVoto(idParametro)
 {
-	
+	MostrarVotacion();
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -37,12 +37,12 @@ function EditarVoto(idParametro)
 		var voto =JSON.parse(retorno);
 		$("#dni").val(voto.dni);
 		$("#provincia").val(voto.provincia);
-		$("#sexo").val(voto.sexo);
+		$("#sexo:checked").val(voto.sexo);
 		$("#presidente").val(voto.presidente);	
+		$("#localidad").val(voto.localidad);
+		$("#domicilio").val(voto.domicilio);
 	});
 	
-	
-	MostrarVotacion();
 }
 
 
@@ -51,7 +51,7 @@ function GuardarVoto()
 
 	var provincia=$("#provincia").val();
 	var presidente=$("#presidente").val();
-	var sexo=$("#sexo").val();
+	var sexo=$('#sexo:checked').val();
 	var dni = $("#dni").val();		
 	var localidad=$("#localidad").val();
 	var domicilio=$("#domicilio").val();

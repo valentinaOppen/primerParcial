@@ -40,11 +40,11 @@ if(isset($_SESSION['registrado']))
 
 
         <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="sexo" value="masculino">Masculino
+          <input type="radio" name="sexo" id="sexo" value="m">Masculino
         </label>
         
     		<label class="radio-inline">
-    		  <input type="radio" name="inlineRadioOptions" id="sexo" value="femenino">Femenino
+    		  <input type="radio" name="sexo" id="sexo" value="f">Femenino
     		</label>
 
     		<input type="hidden" id="dni" value="<?php echo $_SESSION['registrado'] ?>"></input>
