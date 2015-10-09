@@ -79,4 +79,8 @@ function GuardarVoto()
 		
 	});
 		
+		/* 
+
+	var sexo=$('input:radio [name=sexo]:checked').val();
+	*/
 }
